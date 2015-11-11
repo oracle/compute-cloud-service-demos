@@ -1,0 +1,17 @@
+#!/bin/bash
+/usr/bin/expect - <<EOF
+spawn ./OPatch/ocm/bin/emocmrsp -no_banner <%= node['oracle']['csi'] %> <%= node['oracle']['email'] %> US -output ocm.rsp
+set timeout 360
+expect {
+  "Oracle Support Hub URL:"
+  {
+    send "NONE\n"
+    exp_continue
+  }
+  "Proxy specification:"
+  {
+    send "NONE\n"
+    exp_continue
+  }
+}
+EOF

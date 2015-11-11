@@ -1,0 +1,21 @@
+{
+  "name": "oracle_database_11204",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[oracle-database::oradb_install_binaries_11204]",
+    "recipe[oracle-database::oradb_create_database_11204]",
+    "recipe[oracle-database::oradb_cleanup]"
+  ],
+  "env_run_lists": {
+
+  }
+}
+

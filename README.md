@@ -1,3 +1,7 @@
+# Compute Cloud Service Demos
+This project contains automation samples for [Oracle Compute Cloud Service](https://cloud.oracle.com) using [Chef](https://www.chef.io).
+
+# License
 Copyright 2015 Oracle and/or its affiliates. 
  
 Licensed under the Apache License, Version 2.0 (the "License");
