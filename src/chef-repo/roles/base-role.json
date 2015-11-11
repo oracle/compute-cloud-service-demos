@@ -1,0 +1,9 @@
+{
+  "name": "base-role",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "A role with test cookbooks for CCS Demo",
+  "run_list": [
+    "recipe[custom-ssh-banner]"
+  ]
+}
