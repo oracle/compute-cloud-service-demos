@@ -1,0 +1,15 @@
+print 'CREATING cluster <%= node[:oracle][:cluster] %> ';
+
+readDomain('<%= node[:oracle][:domain_home] %>/<%= node[:oracle][:domain_name] %>')
+cd('/')
+create('<%= node[:oracle][:cluster] %>', 'Cluster')
+assign('Server', '<%= node[:oracle][:managed_server][:name] %>','Cluster','<%= node[:oracle][:cluster]%>')
+cd('/')
+cd('Cluster/<%= node[:oracle][:cluster] %>' )
+set('ClusterMessagingMode','unicast') 
+updateDomain()
+
+print 'cluster <%= node[:oracle][:cluster] %> CREATED SUCCESSFULLY'
+exit()
+
+    

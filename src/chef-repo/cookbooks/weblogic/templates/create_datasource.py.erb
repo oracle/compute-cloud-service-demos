@@ -1,0 +1,33 @@
+print 'CREATING datasource <%= node[:oracle][:datasource][:name] %> ';
+
+readDomain('<%= node[:oracle][:domain_home] %>/<%= node[:oracle][:domain_name] %>')
+cd('/')
+create('<%= node[:oracle][:datasource][:name] %>', 'JDBCSystemResource')
+cd('JDBCSystemResource/<%= node[:oracle][:datasource][:name] %>/JdbcResource/<%= node[:oracle][:datasource][:name] %>')
+create('myJdbcDriverParams','JDBCDriverParams')
+cd('JDBCDriverParams/NO_NAME_0')
+set('DriverName','<%= node[:oracle][:datasource][:driver] %>')
+set('URL','jdbc:oracle:thin:@<%= node[:oracle][:datasource][:dbhost] %>:<%= node[:oracle][:datasource][:dbport] %>:<%= node[:oracle][:datasource][:dbsid] %> ')
+set('PasswordEncrypted', '<%= node[:oracle][:datasource][:dbpassword] %>')
+create('myProps','Properties')
+cd('Properties/NO_NAME_0')
+create('user', 'Property')
+cd('Property/user')
+cmo.setValue('<%= node[:oracle][:datasource][:dbusername] %>')
+cd('/JDBCSystemResource/<%= node[:oracle][:datasource][:name] %>/JdbcResource/<%= node[:oracle][:datasource][:name] %>')
+create('myJdbcDataSourceParams','JDBCDataSourceParams')
+cd('JDBCDataSourceParams/NO_NAME_0')
+set('JNDIName', '<%= node[:oracle][:datasource][:name] %>_jndi')
+cd('/JDBCSystemResource/<%= node[:oracle][:datasource][:name] %>/JdbcResource/<%= node[:oracle][:datasource][:name] %>')
+create('myJdbcConnectionPoolParams','JDBCConnectionPoolParams')
+cd('JDBCConnectionPoolParams/NO_NAME_0')
+set('TestTableName','SQL SELECT 1 FROM DUAL')
+set('TestConnectionsOnReserve', true)
+assign('JDBCSystemResource', '<%= node[:oracle][:datasource][:name] %>', 'Target', '<%= node[:oracle][:datasource][:target] %>') 
+updateDomain()
+
+print 'Datasource <%= node[:oracle][:datasource][:name] %> CREATED SUCCESSFULLY'
+exit()
+
+
+

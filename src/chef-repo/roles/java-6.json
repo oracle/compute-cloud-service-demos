@@ -1,0 +1,9 @@
+{
+ "name": "java-6",
+ "chef_type": "role",
+ "json_class": "Chef::Role",
+ "description": "A role to Install and setup Java-6",
+ "run_list": [
+    "recipe[weblogic::install-java]"
+ ]
+}

@@ -1,0 +1,12 @@
+print 'CREATING <%= node[:oracle][:domain_name] %> Machine';
+readDomain('<%= node[:oracle][:domain_home] %>/<%= node[:oracle][:domain_name] %>')
+cd('/')
+create('<%= node['fqdn'] %>','Machine')
+cd('Machine/<%= node['fqdn'] %>')
+create('<%= node['fqdn'] %>','NodeManager')
+cd('NodeManager/'+'<%= node['fqdn'] %>')
+set('ListenPort',int('<%= node[:oracle][:nodemgr_port]%>'))
+updateDomain()
+print '<%= node[:oracle][:domain_name] %> machine CREATED SUCCESSFULLY';
+
+exit()

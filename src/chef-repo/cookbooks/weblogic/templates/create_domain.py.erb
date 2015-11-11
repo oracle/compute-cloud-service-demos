@@ -1,0 +1,6 @@
+print 'CREATING <%= node[:oracle][:domain_name] %> DOMAIN';
+
+createDomain('<%= node[:oracle][:wls_install_dir] %>/common/templates/domains/wls.jar','<%= node[:oracle][:domain_home] %>/<%= node[:oracle][:domain_name] %>','<%= node[:oracle][:admin_user] %>','<%= node[:oracle][:admin_pass] %>')
+print '<%= node[:oracle][:domain_name] %> DOMAIN CREATED SUCCESSFULLY';
+
+exit()

@@ -1,0 +1,13 @@
+print 'CREATING <%= node[:oracle][:domain_name] %> managed server';
+
+readDomain('<%= node[:oracle][:domain_home] %>/<%= node[:oracle][:domain_name] %>')
+cd('/')
+create('<%=node[:oracle][:managed_server][:name]%>', 'Server')
+cd('Server/<%=node[:oracle][:managed_server][:name]%>')
+set('ListenPort', int('<%= node[:oracle][:managed_server][:port]%>'))
+set('ListenAddress', '')
+set('Machine', '<%= node['fqdn'] %>')
+updateDomain()
+
+print '<%= node[:oracle][:managed_server][:name] %> managed server CREATED SUCCESSFULLY'
+exit()

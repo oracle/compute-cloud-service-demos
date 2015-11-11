@@ -1,0 +1,14 @@
+{
+ "name": "weblogic-generic-no-patch",
+ "chef_type": "role",
+ "json_class": "Chef::Role",
+ "description": "A role to Install and setup weblogic-domain",
+ "run_list": [
+    "recipe[weblogic::install-wlsgeneric]",
+    "recipe[weblogic::create-domain]",
+    "recipe[weblogic::create-machine]",
+    "recipe[weblogic::create-managed]",
+    "recipe[weblogic::create-cluster]",
+    "recipe[weblogic::create-datasource]"
+ ]
+}
