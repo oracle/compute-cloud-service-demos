@@ -1,5 +1,6 @@
 # Compute Cloud Services Demos
 This project contains automation samples for [Oracle Compute Cloud Service](https://cloud.oracle.com) using [Chef](https://www.chef.io).
+For more information visit the [Oracle Compute Cloud Service Help Center](http://docs.oracle.com/cloud/latest/stcomputecs/compute-cloud-tutorials.html).
 
 # License
 Copyright 2015 Oracle and/or its affiliates. 
