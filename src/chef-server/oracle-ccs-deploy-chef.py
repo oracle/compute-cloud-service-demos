@@ -43,8 +43,8 @@ log.addHandler(clog)
 
 #
 # Package list
-PACKAGE_LIST = ["chef-server-core-12.0.8-1.el6.x86_64.rpm,https://web-dl.packagecloud.io/chef/stable/packages/el/6/chef-server-core-12.0.8-1.el6.x86_64.rpm,828b4f87763b93063028c41f88c72d20f22bb2c1",
-                "chef-12.3.0-1.el6.x86_64.rpm,https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chef-12.3.0-1.el6.x86_64.rpm,b92e7b8a61ad17909b554cc120680f73d186e96f",
+PACKAGE_LIST = ["chef-server-core-12.0.8-1.el6.x86_64.rpm,https://packages.chef.io/stable/el/6/chef-server-core-12.0.8-1.el6.x86_64.rpm,828b4f87763b93063028c41f88c72d20f22bb2c1",
+                "chef-12.3.0-1.el6.x86_64.rpm,https://packages.chef.io/stable/el/6/chef-12.3.0-1.el6.x86_64.rpm,b92e7b8a61ad17909b554cc120680f73d186e96f",
                 ]
 #
 # Chef Server defaults
